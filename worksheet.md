@@ -23,7 +23,7 @@ A LinkedList is a type of array that uses multiple elements with pointers to the
     Remember to test and save often. The `main()` in `MyArrayList.java` already has some tests, although you will not pass all of them in this section (resizing the list is left for the Challenge section below). 
 a. First, we need to be able to create an MyArrayList. Find the public constructor method. What member variables will it need to set? Add those member variables at the first `FIXME`, above the method declaration.    
 _Note_: Java does not allow us to instantiate generic arrays. We can get around this by creating an `Object` array and [casting](https://www.geeksforgeeks.org/class-type-casting-in-java/) it to the generic type. For example: `T[] arr = (T[]) new Object [len];`\
-The member variables it needs to set are `T[] array` to a new array of length initialLength and `int size` to 0
+The member variables it needs to set are `T[] array` to a new array of length initialLength and `int size` to 0\
 b. Fill in the missing code inside the constructor, making sure to set the member variables you just added.  
 c. This is an easy one - we should be able to quickly check the current size of our MyArrayList. Fix the `size()` method to return the current actual size.  
 d. Now that we can create an MyArrayList and check its size, let's start putting elements in there. Fill in the `add()` method, which adds a given element to the end of an MyArrayList. You do *not* need to worry about resizing for now; that is left for the Challenge section below.  
@@ -37,7 +37,7 @@ Member variables:\
     `Node next` - the next element in the linked list\
     `T data` - the element stored in the Node\
 b. What are the member variables of the MyLinkedList class? What information is stored in each of these member variables? What should they be initialized to? Write the code for these member variables, and initialize them in the MyLinkedList constructor. Consider where the `head` and `tail` pointers, in particular, should point.\
-`Node head` - the first element, initialized to null, `Node tail` - the last element, initialized to null, `int size`, the size of the linked list, initialized to 0
+`Node head` - the first element, initialized to null, `Node tail` - the last element, initialized to null, `int size`, the size of the linked list, initialized to 0\
 c. Another easy one - fill out the code for `size()`, which should return the current number of elements in our MyLinkedList.  
 d. For a singly-linked list, there are two cases we have to think about for `add()`. What are those cases? What should be done in each case? Write the code for `add()` when you understand what should happen in each case.\
 Both cases: `size` is incremented\
@@ -60,9 +60,9 @@ b. The `resize()` method is a bit more complicated. The memory diagrams, below, 
 
 3. To complete our MyLinkedList implementation, we only need to add one method: `remove()`.    
 a. Why do we _not_ need a `resize()` method for MyLinkedList?\
-It is not stored in an array, instead, pointers are updated when an element is added. No new memory for an array needs to be allocated because elements can be stored anywhere in memory.
+It is not stored in an array, instead, pointers are updated when an element is added. No new memory for an array needs to be allocated because elements can be stored anywhere in memory.\
 b. The code for the `remove()` method can be broken down into four cases. What are they? What should the code do in each case?\
-All cases: decrement size
+All cases: decrement size\
 Removing first and only element: set head & tail to null\
 Removing first of multiple elements: set head to next element\
 Removing last element: set tail to previous element, set tail.next to null\
@@ -71,7 +71,7 @@ c. Write the code for `remove()`.  Your implementation of MyLinkedList is now co
 
 4. Sections 4.6-4.8 of Zybooks describe a data structure called the doubly-linked list. in short, the main distinguishing feature of a doubly-linked list is that nodes have both `next` and `prev` pointers, that point to the next node and the previous node respectively. This means that the code for a doubly-linked list is almost exactly the same as that for a singly-linked lists, except for the node pointers that you have to change when adding and removing elements.    
 a. Without writing any code, explain how you would need to modify your MyLinkedList `add()` method to turn your implementation into a doubly-linked list.\
-Set prev of added element to the previous tail
+Set prev of added element to the previous tail\
 b. Without writing any code, explain how you would need to modify your MyLinkedList `remove()` method to turn your implementation into a doubly-linked list. How would each of the four cases change?\
 For each case, the following must be added:\
 Removing first and only element: nothing\
